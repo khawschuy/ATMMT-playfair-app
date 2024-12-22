@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playfair Cipher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <div class="header-controls">
+            <button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+        </div>
+
+        <h1>Playfair Cipher Tool</h1>
+        
+        <!-- Thông tin cá nhân -->
+        <div class="personal-info">
+            <h3>Nhóm: Cao Quốc Tuấn - Nguyễn Đoàn Khắc Huy - Nguyễn Triệu Tữ</h3>
+        </div>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="form-container">
+                    <form id="encrypt-form">
+                        <h2>Mã hóa</h2>
+                        <label for="key">Khóa:</label>
+                        <input type="text" id="key" placeholder="Nhập khóa...">
+                        
+                        <!-- Tùy chọn thay thế ký tự -->
+                        <div class="letter-replace">
+                            <label>Thay thế ký tự:</label>
+                            <div class="letter-inputs">
+                                <select id="letter-from">
+                                    <option value="">Chọn ký tự</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                    <option value="G">G</option>
+                                    <option value="H">H</option>
+                                    <option value="I">I</option>
+                                    <option value="J">J</option>
+                                    <option value="K">K</option>
+                                    <option value="L">L</option>
+                                    <option value="M">M</option>
+                                    <option value="N">N</option>
+                                    <option value="O">O</option>
+                                    <option value="P">P</option>
+                                    <option value="Q">Q</option>
+                                    <option value="R">R</option>
+                                    <option value="S">S</option>
+                                    <option value="T">T</option>
+                                    <option value="U">U</option>
+                                    <option value="V">V</option>
+                                    <option value="W">W</option>
+                                    <option value="X">X</option>
+                                    <option value="Y">Y</option>
+                                    <option value="Z">Z</option>
+                                </select>
+                                <span>→</span>
+                                <select id="letter-to">
+                                    <option value="">Chọn ký tự</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                    <option value="G">G</option>
+                                    <option value="H">H</option>
+                                    <option value="I">I</option>
+                                    <option value="J">J</option>
+                                    <option value="K">K</option>
+                                    <option value="L">L</option>
+                                    <option value="M">M</option>
+                                    <option value="N">N</option>
+                                    <option value="O">O</option>
+                                    <option value="P">P</option>
+                                    <option value="Q">Q</option>
+                                    <option value="R">R</option>
+                                    <option value="S">S</option>
+                                    <option value="T">T</option>
+                                    <option value="U">U</option>
+                                    <option value="V">V</option>
+                                    <option value="W">W</option>
+                                    <option value="X">X</option>
+                                    <option value="Y">Y</option>
+                                    <option value="Z">Z</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <label for="plaintext">Văn bản cần mã hóa:</label>
+                        <textarea id="plaintext" rows="4" placeholder="Nhập văn bản..."></textarea>
+                        
+                        <button type="submit">Mã hóa</button>
+                    </form>
+
+                    <form id="decrypt-form">
+                        <h2>Giải mã</h2>
+                        <label for="ciphertext">Văn bản mã hóa:</label>
+                        <textarea id="ciphertext" rows="4" placeholder="Nhập văn bản mã hóa..."></textarea>
+                        
+                        <button type="submit">Giải mã</button>
+                    </form>
+                </div>
+
+                <div id="result-box">
+                    <h2>Kết quả</h2>
+                    <div id="result"></div>
+                    <button id="copy-result" class="copy-btn">📋 Copy kết quả</button>
+                </div>
+
+                <div id="playfair-grid-box">
+                    <h2>Bảng Playfair</h2>
+                    <div id="playfair-grid"></div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="history-box">
+                    <h2>Lịch sử</h2>
+                    <div id="history-list"></div>
+                    <button id="clear-history" class="clear-btn">🗑️ Xóa lịch sử</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="playfair.js"></script>
+</body>
+</html>
