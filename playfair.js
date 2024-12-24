@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const ciphertext = encrypt(plaintext, playfairMatrix);
             document.getElementById('ciphertext').value = ciphertext;
-            document.getElementById('result').textContent = `Văn bản đã mã hóa: ${ciphertext}`;
+            document.getElementById('result').textContent = ciphertext;
             
             // Thêm vào lịch sử
             addToHistory('encrypt', plaintext, ciphertext);
