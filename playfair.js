@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Thêm vào lịch sử
             addToHistory('encrypt', plaintext, ciphertext);
         } catch (error) {
-            alert(error.message);
+            // alert(error.message);
         }
     });
     
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Thêm vào lịch sử
             addToHistory('decrypt', ciphertext, plaintext);
         } catch (error) {
-            alert(error.message);
+            //alert(error.message);
         }
     });
 });
