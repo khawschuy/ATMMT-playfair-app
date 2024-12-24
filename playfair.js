@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const plaintext = document.getElementById('plaintext').value.toUpperCase();
         
         if (!key || !plaintext) {
-            alert('Vui lòng nhập đầy đủ khóa và văn bản!');
-            return;
+            generateRandomString();
         }
 
         try {
@@ -83,6 +82,30 @@ function initThemeToggle() {
         themeBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
+}
+// tạo key random
+function generateRandomString() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let result = '';
+    const length = 10;
+
+    // Chuyển chuỗi characters thành một mảng để có thể loại bỏ ký tự đã chọn
+    let availableCharacters = characters.split('');
+
+    for (let i = 0; i < length; i++) {
+        // Chọn một ký tự ngẫu nhiên từ mảng availableCharacters
+        const randomIndex = Math.floor(Math.random() * availableCharacters.length);
+        const randomChar = availableCharacters[randomIndex];
+
+        // Thêm ký tự vào kết quả
+        result += randomChar;
+
+        // Loại bỏ ký tự đã chọn khỏi mảng availableCharacters
+        availableCharacters.splice(randomIndex, 1);
+    }
+
+    // Đặt giá trị của ô input có id 'key' bằng chuỗi kết quả
+    document.getElementById('key').value = result;
 }
 
 // Khởi tạo nút copy

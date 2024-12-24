@@ -25,7 +25,10 @@
                     <form id="encrypt-form">
                         <h2>Mã hóa</h2>
                         <label for="key">Khóa:</label>
-                        <input type="text" id="key" placeholder="Nhập khóa...">
+                        <div class="letter-inputs">
+                            <input type="text" id="key" placeholder="Nhập khóa...">
+                            <button id="random" onclick="generateRandomString()" type="submit">Random</button>
+                        </div>  
                         
                         <!-- Tùy chọn thay thế ký tự -->
                         <div class="letter-replace">
@@ -114,19 +117,15 @@
                     <button id="copy-result" class="copy-btn">📋 Copy kết quả</button>
                 </div>
 
+                
+            </div>
+            <div class="right-panel">
                 <div id="playfair-grid-box">
                     <h2>Bảng Playfair</h2>
                     <div id="playfair-grid"></div>
                 </div>
             </div>
-
-            <div class="right-panel">
-                <div class="history-box">
-                    <h2>Lịch sử</h2>
-                    <div id="history-list"></div>
-                    <button id="clear-history" class="clear-btn">🗑️ Xóa lịch sử</button>
-                </div>
-            </div>
+           
         </div>
     </div>
 
